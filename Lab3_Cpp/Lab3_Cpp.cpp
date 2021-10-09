@@ -1,12 +1,13 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
-
+#include <iomanip> 
 using namespace std;
 
 
 int main()
 {
-	double x;
+	cout << "Input x ";
+		double x;
 	cin >> x;
 		double sum = 0;
 	double k = 0.0001;
@@ -14,16 +15,18 @@ int main()
 	double step = x;
 	double fact=1;
 	int sign = 1;
-		while (abs(sign*step/fact)>k) {
+	double pool = abs(1.*sign * step / fact);
+		while (pool>k) {
 			sum += sign * step / fact;
            n++;
 		   sign = -sign;
 		   step *= x * x;
 		   fact *= 2 * n;
-		   
+		   cout << "pool = " <<fixed<< pool << endl;
+		   pool = abs(1. * sign * step / fact);
 		}
 		n--;
-		cout << sum <<" "<< n;
+		cout <<"Sum - "<< sum ;
 	
     
 	
